@@ -21,3 +21,108 @@
   text-decoration: inherit;
   font-weight: bold;
 }
+
+.Form {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.Note-editable {
+  border: none;
+  resize: none;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+
+.Note-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.Note-content {
+  flex-grow: 1;
+}
+
+.Note-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 1rem;
+}
+
+.Button {
+  border: none;
+  background-color: #1e88e5;
+  color: white;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-left: 0.5rem;
+}
+
+.Overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  }
+  
+  .Modal {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  }
+  
+  .Modal-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  }
+  
+  .Modal-buttons {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  }
+  
+  .Modal-button {
+  border: none;
+  background-color: #1e88e5;
+  color: white;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  cursor: pointer;
+  }
+  
+  .Modal-button-cancel {
+  background-color: #ccc;
+  }
+  
+  .JumpButton {
+  border: none;
+  background-color: #1e88e5;
+  color: white;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-top: 1rem;
+  align-self: flex-end;
+  }
+  
+  .JumpButton:hover {
+  background-color: #0d47a1;
+  }
