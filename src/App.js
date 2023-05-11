@@ -7,6 +7,7 @@ import Note from "./components/Note/Note";
 function App() {
   const [notes, setNotes] = useState(null);
   const [searchTerm, setSearchTerm] = useState("");
+  const [newNoteTitle, setNewNoteTitle] = useState("");
 
   const fetchNotes = async () => {
     const response = await fetch("/notes");
@@ -17,6 +18,19 @@ function App() {
   const filteredNotes = notes?.filter((note) =>
     note.title.toLowerCase().includes(searchTerm.toLowerCase())
   );
+
+  const handleCreateNote = async () => {
+    const response = await fetch("/notes", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ title: newNoteTitle }),
+    });
+    const result = await response.json();
+    setNewNoteTitle("");
+    setNotes((prevNotes) => [...prevNotes, result]);
+  };
 
   useEffect(() => {
     fetchNotes();
@@ -37,6 +51,15 @@ function App() {
               {note.title}
             </Link>
           ))}
+        <div>
+          <input
+            type="text"
+            placeholder="Titre de la note"
+            value={newNoteTitle}
+            onChange={(e) => setNewNoteTitle(e.target.value)}
+          />
+          <button onClick={handleCreateNote}>Créer une note</button>
+        </div>
       </aside>
       <main className="Main">
         <Routes>
