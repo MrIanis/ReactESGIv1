@@ -37,36 +37,41 @@ function App() {
   }, []);
 
   return (
-    <>
-      <aside className="Side">
-        <input
-          type="text"
-          placeholder="Recherche..."
-          value={searchTerm}
-          onChange={(e) => setSearchTerm(e.target.value)}
-        />
-        {filteredNotes &&
-          filteredNotes.map((note) => (
-            <Link to={`/notes/${note.id}`} className="Note-link">
-              {note.title}
-            </Link>
-          ))}
-        <div>
-          <input
-            type="text"
-            placeholder="Titre de la note"
-            value={newNoteTitle}
-            onChange={(e) => setNewNoteTitle(e.target.value)}
-          />
-          <button onClick={handleCreateNote}>Créer une note</button>
-        </div>
-      </aside>
-      <main className="Main">
-        <Routes>
-          <Route path="/notes/:id" element={<Note onSave={fetchNotes} />} />
-        </Routes>
-      </main>
-    </>
+<>
+  <aside className="Side">
+    <div className="Search">
+      <input
+        type="text"
+        placeholder="Recherche..."
+        value={searchTerm}
+        onChange={(e) => setSearchTerm(e.target.value)}
+      />
+    </div>
+    <div className="Note-list">
+      {filteredNotes &&
+        filteredNotes.map((note) => (
+          <Link to={`/notes/${note.id}`} className="Note-link">
+            {note.title}
+          </Link>
+        ))}
+    </div>
+    <div className="New-note">
+      <input
+        type="text"
+        placeholder="Titre de la note"
+        value={newNoteTitle}
+        onChange={(e) => setNewNoteTitle(e.target.value)}
+      />
+      <button onClick={handleCreateNote} className="Button">Créer une note</button>
+    </div>
+  </aside>
+  <main className="Main">
+    <Routes>
+      <Route path="/notes/:id" element={<Note onSave={fetchNotes} />} />
+    </Routes>
+  </main>
+</>
+
   );
 }
 

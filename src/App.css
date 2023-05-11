@@ -126,3 +126,25 @@
   .JumpButton:hover {
   background-color: #0d47a1;
   }
+
+
+.Search input {
+  width: 100%;
+  padding: 8px;
+  border-radius: 4px;
+  border: none;
+  margin-bottom: 16px;
+}
+
+.Note-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.New-note input[type="text"] {
+  width: 100%;
+  padding: 8px;
+  border-radius: 4px;
+  border: none;
+  margin-bottom: 8px;
+}
