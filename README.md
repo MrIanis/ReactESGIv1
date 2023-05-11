@@ -1,12 +1,22 @@
-# Notes
+# Notes App
+
+Ce projet est une application de prise de notes simple construite avec React.
+
+## Fonctionnalités
+
+L'application permet à l'utilisateur de :
+
+- Affichage des notes existantes
+- Recherche de notes par titre
+- Création d'une nouvelle note
+- Modification d'une note existante
+- Suppression d'une note existante
 
 ## Installation
 
-Installation des dépendances de l'application React :
-
-```
-npm install
-```
+1. Clonez le dépôt : `git clone https://github.com/MrIanis/ReactESGIv1.git`
+2. Installez les dépendances : `npm install`
+3. Démarrez l'application : `npm start`
 
 ## Démarrage
 
@@ -27,7 +37,7 @@ Dans un dossier API, créer un fichier `db.json` avec par exemple ce contenu :
     }
   ],
   "profile": {
-    "name": "Arnaud"
+    "name": "Ianis"
   }
 }
 ```
@@ -38,9 +48,6 @@ Démarrage du `json-server` :
 npx json-server --watch api/db.json --port 4000
 ```
 
-Démarrage du serveur de développement de l'application React :
+## Contributeurs
 
-```
-cd webapp
-npm start
-```
+- Ianis Pouru
